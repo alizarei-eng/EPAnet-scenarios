@@ -2,25 +2,17 @@ import json
 from pathlib import Path
 from datetime import datetime
 
+from project_paths import PATHS
+
 
 # =========================================================
 # 1. PATH CONFIGURATION
 # =========================================================
 
-BASE_DIR = Path(__file__).resolve().parent
-
-INPUT_FILE = (
-    BASE_DIR
-    / "network_information_result"
-    / "Network_SI.json"
-)
-
-OUTPUT_DIR = (
-    BASE_DIR
-    / "network_information_result"
-)
-
-OUTPUT_FILE = OUTPUT_DIR / "Network_Inspection.json"
+BASE_DIR = PATHS.project_dir
+INPUT_FILE = PATHS.network_si
+OUTPUT_DIR = PATHS.results_dir
+OUTPUT_FILE = PATHS.network_inspection
 
 
 # =========================================================
@@ -294,12 +286,12 @@ def inspect_component(component_name, records):
 # 6. INSPECT ALL NETWORK COMPONENTS
 # =========================================================
 
-def inspect_network(network_data):
+def inspect_network(network_data, source_file=None):
 
     inspection = {
         "Inspection information": {
             "Created at": datetime.now().isoformat(),
-            "Source file": INPUT_FILE.name
+            "Source file": Path(source_file).name if source_file else INPUT_FILE.name
         },
 
         "Network summary": network_data.get(
@@ -424,36 +416,20 @@ def save_inspection(inspection, output_file):
     print(output_file)
 
 
-# =========================================================
-# 9. MAIN
-# =========================================================
+# PUBLIC API
+
+def run_network_inspector(input_file=None, output_file=None):
+    input_file = Path(input_file or INPUT_FILE).resolve()
+    output_file = Path(output_file or OUTPUT_FILE).resolve()
+    network_data = load_network_information(input_file)
+    inspection = inspect_network(network_data, source_file=input_file)
+    display_inspection(inspection)
+    save_inspection(inspection, output_file)
+    return inspection
+
 
 def main():
-
-    print("\nLoading network information...")
-
-    network_data = load_network_information(
-        INPUT_FILE
-    )
-
-    print("Network information loaded successfully.")
-
-    print("\nInspecting network components...")
-
-    inspection = inspect_network(
-        network_data
-    )
-
-    display_inspection(
-        inspection
-    )
-
-    save_inspection(
-        inspection,
-        OUTPUT_FILE
-    )
-
-    print("\nNetwork inspection completed successfully.")
+    run_network_inspector()
 
 
 if __name__ == "__main__":
