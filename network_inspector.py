@@ -394,7 +394,7 @@ def display_inspection(inspection):
 
 def save_inspection(inspection, output_file):
 
-    OUTPUT_DIR.mkdir(
+    Path(output_file).parent.mkdir(
         parents=True,
         exist_ok=True
     )
