@@ -3,40 +3,20 @@ import os
 import json
 import math
 from datetime import datetime
+from pathlib import Path
+
+from project_paths import PATHS
 
 
 # ============================================================
 # PATHS
-# ============================================================
-
-PROJECT_DIR = (
-    r"D:\desalination_lengeh"
-    r"\EPAnet_lahestan_project"
-    r"\examle_learning"
-)
-
-RESULTS_DIR = os.path.join(
-    PROJECT_DIR,
-    "network_information_result"
-)
-
-COMPARISON_FILE = os.path.join(
-    RESULTS_DIR,
-    "Comparison_Results.json"
-)
-
-SCENARIO_FILE = os.path.join(
-    RESULTS_DIR,
-    "Scenario_Definitions.json"
-)
-
-REPORT_FILE = os.path.join(
-    RESULTS_DIR,
-    "Comparison_Validation_Report.txt"
-)
+PROJECT_DIR = str(PATHS.project_dir)
+RESULTS_DIR = str(PATHS.results_dir)
+COMPARISON_FILE = str(PATHS.comparison_results)
+SCENARIO_FILE = str(PATHS.scenario_definitions)
+REPORT_FILE = str(PATHS.validation_report)
 
 
-# ============================================================
 # EXPECTED MAIN SECTIONS
 # ============================================================
 
@@ -55,7 +35,7 @@ EXPECTED_SECTIONS = [
 
 class ComparisonValidator:
 
-    def __init__(self, comparison_file, scenario_file):
+    def __init__(self, comparison_file, scenario_file, report_file=None):
 
         self.comparison_file = comparison_file
         self.scenario_file = scenario_file
@@ -585,7 +565,7 @@ class ComparisonValidator:
             file.write("\n".join(lines))
 
         print(
-            f"\nValidation report saved:\n{REPORT_FILE}"
+            f"\nValidation report saved:\n{self.report_file}"
         )
 
     # --------------------------------------------------------
@@ -623,11 +603,15 @@ class ComparisonValidator:
 # PROGRAM ENTRY POINT
 # ============================================================
 
-if __name__ == "__main__":
-
+def run_validation(comparison_file=None, scenario_file=None, report_file=None):
     validator = ComparisonValidator(
-        comparison_file=COMPARISON_FILE,
-        scenario_file=SCENARIO_FILE
+        comparison_file=str(comparison_file or PATHS.comparison_results),
+        scenario_file=str(scenario_file or PATHS.scenario_definitions),
+        report_file=str(report_file or PATHS.validation_report)
     )
-
     validator.run()
+    return validator
+
+
+if __name__ == "__main__":
+    run_validation()
