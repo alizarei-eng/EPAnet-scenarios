@@ -20,38 +20,21 @@ import os
 import copy
 import itertools
 from datetime import datetime
+from pathlib import Path
+
+from project_paths import PATHS
 
 
 # ============================================================
 # FILE CONFIGURATION
 # ============================================================
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-RESULT_DIR = os.path.join(
-    BASE_DIR,
-    "network_information_result"
-)
-
-INPUT_FILE = os.path.join(
-    RESULT_DIR,
-    "Network_Inspection.json"
-)
-
-OUTPUT_FILE = os.path.join(
-    RESULT_DIR,
-    "Scenario_Definitions.json"
-)
-
-BACKUP_FILE = os.path.join(
-    RESULT_DIR,
-    "Scenario_Backup.json"
-)
-
-TEMP_FILE = os.path.join(
-    RESULT_DIR,
-    "Scenario_Temp.json"
-)
+BASE_DIR = str(PATHS.project_dir)
+RESULT_DIR = str(PATHS.results_dir)
+INPUT_FILE = str(PATHS.network_inspection)
+OUTPUT_FILE = str(PATHS.scenario_definitions)
+BACKUP_FILE = str(PATHS.scenario_backup)
+TEMP_FILE = str(PATHS.scenario_temp)
 
 
 # ============================================================
@@ -190,7 +173,7 @@ def project_information():
 
     return {
 
-        "Source file": INPUT_FILE,
+        "Source file": str(INPUT_FILE),
 
         "Created at": session_created_at or timestamp(),
 
@@ -1560,6 +1543,20 @@ def main():
     main_menu()
 
 
-if __name__ == "__main__":
+def run_scenario_setup(inspection_file=None, scenario_file=None, backup_file=None, temp_file=None):
+    """Run scenario setup in the current terminal session."""
+    global INPUT_FILE, OUTPUT_FILE, BACKUP_FILE, TEMP_FILE, RESULT_DIR
+    global inspection_data, scenarios, draft_scenario, session_created_at
+    INPUT_FILE = str(Path(inspection_file or PATHS.network_inspection).resolve())
+    OUTPUT_FILE = str(Path(scenario_file or PATHS.scenario_definitions).resolve())
+    BACKUP_FILE = str(Path(backup_file or PATHS.scenario_backup).resolve())
+    TEMP_FILE = str(Path(temp_file or PATHS.scenario_temp).resolve())
+    RESULT_DIR = str(Path(OUTPUT_FILE).parent)
+    inspection_data, scenarios, draft_scenario = {}, [], None
+    session_created_at = None
+    Path(RESULT_DIR).mkdir(parents=True, exist_ok=True)
+    main()
 
+
+if __name__ == "__main__":
     main()

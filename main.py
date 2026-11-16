@@ -1,406 +1,224 @@
-
+"""
+EPANET Python Analysis System
+Central terminal interface. Run: python main.py
+"""
 import json
 import traceback
 from pathlib import Path
 
-from simulation.model_manager import ModelManager
-from simulation.simulation_engine import SimulationEngine
-from results_manager import ResultsManager
-from comparison_engine import ComparisonEngine
-from inspect_comparison_json import inspect_comparison_json
+from project_paths import PATHS, ask_input_file, ensure_project_directories
+
+CURRENT_INP_FILE = None
 
 
-# ============================================================
-# 1. PROJECT PATHS
-# ============================================================
-
-PROJECT_DIR = Path(__file__).resolve().parent
-RESULTS_DIR = PROJECT_DIR / "network_information_result"
-
-INP_FILE = PROJECT_DIR / "flow.inp"
-
-NETWORK_ORIGINAL_JSON = RESULTS_DIR / "Network_Original.json"
-NETWORK_SI_JSON = RESULTS_DIR / "Network_SI.json"
-SCENARIO_JSON = RESULTS_DIR / "Scenario_Definitions.json"
-
-SIMULATION_RESULTS_JSON = RESULTS_DIR / "Simulation_Results.json"
-COMPARISON_RESULTS_JSON = RESULTS_DIR / "Comparison_Results.json"
-
-INSPECTION_REPORT_FILE = (
-    RESULTS_DIR / "Comparison_JSON_Inspection.txt"
-)
-
-REPORT_GENERATOR_FILE = PROJECT_DIR / "report_generator.py"
-
-
-# ============================================================
-# 2. GENERAL UTILITIES
-# ============================================================
-
-def print_section(title):
-
-    print("\n" + "=" * 65)
+def section(title):
+    print("\n" + "=" * 68)
     print(title)
-    print("=" * 65)
+    print("=" * 68)
 
 
-def load_json_file(file_path):
-
-    with open(file_path, "r", encoding="utf-8") as file:
-        return json.load(file)
-
-
-# ============================================================
-# 3. CHECK REQUIRED FILES
-# ============================================================
-
-def validate_input_files():
-
-    print_section("CHECKING PROJECT FILES")
-
-    required_files = {
-        "EPANET INP file": INP_FILE,
-        "Original Network JSON": NETWORK_ORIGINAL_JSON,
-        "SI Network JSON": NETWORK_SI_JSON,
-        "Scenario Definitions JSON": SCENARIO_JSON,
-    }
-
-    missing_files = []
-
-    for description, file_path in required_files.items():
-
-        if file_path.is_file():
-
-            print(f"[OK]      {description}")
-            print(f"          {file_path}")
-
-        else:
-
-            print(f"[MISSING] {description}")
-            print(f"          {file_path}")
-
-            missing_files.append(str(file_path))
-
-    RESULTS_DIR.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    if missing_files:
-
-        raise FileNotFoundError(
-            "Required project files are missing:\n"
-            + "\n".join(missing_files)
-        )
-
-    if not REPORT_GENERATOR_FILE.is_file():
-
-        raise FileNotFoundError(
-            f"Report generator was not found:\n"
-            f"{REPORT_GENERATOR_FILE}"
-        )
+def require_file(path, description):
+    path = Path(path)
+    if not path.is_file():
+        raise FileNotFoundError(f"{description} was not found: {path}")
+    return path
 
 
-# ============================================================
-# 4. LOAD PROJECT DATA
-# ============================================================
+def run_network_reader_stage():
+    import network_reader
+    section("NETWORK INFORMATION")
+    result = network_reader.run_network_reader(CURRENT_INP_FILE, PATHS.results_dir)
+    print("\n[OK] Network information generated.")
+    return result
 
-def load_project_data():
 
-    print_section("LOADING PROJECT DATA")
+def run_network_inspection_stage():
+    import network_inspector
+    section("NETWORK INSPECTION")
+    return network_inspector.run_network_inspector(PATHS.network_si, PATHS.network_inspection)
 
-    network_original_data = load_json_file(
-        NETWORK_ORIGINAL_JSON
-    )
 
-    network_si_data = load_json_file(
-        NETWORK_SI_JSON
-    )
-
-    scenario_data = load_json_file(
-        SCENARIO_JSON
-    )
-
-    print("[OK] Original network data loaded.")
-    print("[OK] SI network data loaded.")
-    print("[OK] Scenario definitions loaded.")
-
-    return (
-        network_original_data,
-        network_si_data,
-        scenario_data
+def run_scenario_stage():
+    import scenario_setup
+    section("SCENARIO SETUP")
+    require_file(PATHS.network_inspection, "Network inspection file")
+    scenario_setup.run_scenario_setup(
+        inspection_file=PATHS.network_inspection,
+        scenario_file=PATHS.scenario_definitions,
+        backup_file=PATHS.scenario_backup,
+        temp_file=PATHS.scenario_temp
     )
 
 
-# ============================================================
-# 5. PREPARE SCENARIO MODELS
-# ============================================================
+def run_simulation_stage():
+    from simulation.model_manager import ModelManager
+    from simulation.simulation_engine import SimulationEngine
+    from results_manager import ResultsManager
 
-def prepare_models(scenario_data):
+    section("HYDRAULIC SIMULATION")
+    require_file(CURRENT_INP_FILE, "EPANET INP file")
+    for path, label in (
+        (PATHS.network_original, "Original network JSON"),
+        (PATHS.network_si, "SI network JSON"),
+        (PATHS.scenario_definitions, "Scenario definitions")
+    ):
+        require_file(path, label)
 
-    print_section("PREPARING SCENARIO MODELS")
-
-    model_manager = ModelManager(
-        inp_file=str(INP_FILE),
-        network_original_json=str(NETWORK_ORIGINAL_JSON),
-        network_si_json=str(NETWORK_SI_JSON),
-        scenario_json=str(SCENARIO_JSON)
-    )
-
-    model_manager.show_network_inventory()
-
-    model_manager.prepare_all_scenarios()
-
-    model_manager.show_prepared_scenarios()
-
-    scenarios = scenario_data.get(
-        "Scenarios",
-        []
-    )
+    with open(PATHS.scenario_definitions, "r", encoding="utf-8") as f:
+        scenario_data = json.load(f)
+    with open(PATHS.network_si, "r", encoding="utf-8") as f:
+        network_si_data = json.load(f)
 
     scenario_names = [
-        scenario["Scenario name"]
-        for scenario in scenarios
-        if isinstance(scenario, dict)
-        and "Scenario name" in scenario
+        item.get("Scenario name")
+        for item in scenario_data.get("Scenarios", [])
+        if isinstance(item, dict) and item.get("Scenario name")
     ]
-
     if not scenario_names:
+        raise RuntimeError("No scenarios are defined. Create scenarios first.")
 
-        raise RuntimeError(
-            "No scenario names found in "
-            "Scenario_Definitions.json"
-        )
-
-    print(
-        f"\nDefined scenarios: {len(scenario_names)}"
+    model_manager = ModelManager(
+        inp_file=CURRENT_INP_FILE,
+        network_original_json=PATHS.network_original,
+        network_si_json=PATHS.network_si,
+        scenario_json=PATHS.scenario_definitions
     )
+    model_manager.show_network_inventory()
+    model_manager.prepare_all_scenarios()
+    model_manager.show_prepared_scenarios()
 
-    return model_manager, scenario_names
+    engine = SimulationEngine()
+    simulation_output = engine.run_all(model_manager=model_manager, scenario_names=scenario_names)
 
-
-# ============================================================
-# 6. RUN SIMULATIONS
-# ============================================================
-
-def run_simulations(
-    model_manager,
-    scenario_names
-):
-
-    print_section("RUNNING HYDRAULIC SIMULATIONS")
-
-    simulation_engine = SimulationEngine()
-
-    simulation_output = simulation_engine.run_all(
-        model_manager=model_manager,
-        scenario_names=scenario_names
-    )
-
-    print("\n[OK] Simulation stage completed.")
-
-    return simulation_output
-
-
-# ============================================================
-# 7. COLLECT SIMULATION RESULTS
-# ============================================================
-
-def collect_simulation_results(
-    simulation_output,
-    scenario_data,
-    network_si_data
-):
-
-    print_section("COLLECTING SIMULATION RESULTS")
-
-    results_manager = ResultsManager(
-        output_file=str(SIMULATION_RESULTS_JSON)
-    )
-
-    results_manager.collect_all(
+    manager = ResultsManager(output_file=PATHS.simulation_results)
+    manager.collect_all(
         simulation_output=simulation_output,
         scenario_definitions=scenario_data,
         network_si_data=network_si_data
     )
+    manager.show_summary()
+    manager.save_json()
+    print(f"\n[OK] Results saved: {PATHS.simulation_results}")
+    return manager
 
-    results_manager.show_summary()
 
-    results_manager.save_json()
-
-    print(
-        f"\n[OK] Simulation results saved:\n"
-        f"{SIMULATION_RESULTS_JSON}"
+def run_comparison_stage():
+    from comparison_engine import ComparisonEngine
+    section("SCENARIO COMPARISON")
+    require_file(PATHS.simulation_results, "Simulation results")
+    require_file(PATHS.scenario_definitions, "Scenario definitions")
+    engine = ComparisonEngine(
+        results_file=PATHS.simulation_results,
+        scenario_file=PATHS.scenario_definitions,
+        output_file=PATHS.comparison_results
     )
-
-    return results_manager
-
-
-# ============================================================
-# 8. COMPARE SCENARIOS
-# ============================================================
-
-def compare_scenarios():
-
-    print_section("COMPARING SCENARIOS")
-
-    comparison_engine = ComparisonEngine(
-        results_file=str(SIMULATION_RESULTS_JSON),
-        scenario_file=str(SCENARIO_JSON),
-        output_file=str(COMPARISON_RESULTS_JSON)
-    )
-
-    comparison_engine.run()
-
-    comparison_engine.show_summary()
-
-    comparison_engine.save_json()
-
-    print(
-        f"\n[OK] Comparison results saved:\n"
-        f"{COMPARISON_RESULTS_JSON}"
-    )
-
-    return comparison_engine
+    engine.run()
+    engine.show_summary()
+    engine.save_json()
+    return engine
 
 
-# ============================================================
-# 9. INSPECT COMPARISON JSON
-# ============================================================
-
-def inspect_comparison_results():
-
-    print_section("INSPECTING COMPARISON JSON")
-
-    inspect_comparison_json(
-        json_file=COMPARISON_RESULTS_JSON,
-        report_file=INSPECTION_REPORT_FILE
-    )
-
-    print(
-        f"\n[OK] Inspection report saved:\n"
-        f"{INSPECTION_REPORT_FILE}"
+def run_report_stage():
+    import report_generator
+    section("INTERACTIVE REPORT GENERATOR")
+    for path, label in (
+        (PATHS.simulation_results, "Simulation results"),
+        (PATHS.comparison_results, "Comparison results"),
+        (PATHS.scenario_definitions, "Scenario definitions")
+    ):
+        require_file(path, label)
+    report_generator.run_report_generator(
+        simulation_file=PATHS.simulation_results,
+        comparison_file=PATHS.comparison_results,
+        scenario_file=PATHS.scenario_definitions,
+        output_directory=PATHS.reports_dir
     )
 
 
-# ============================================================
-# 10. INTERACTIVE REPORT GENERATOR
-# ============================================================
+def run_validation_stage():
+    import validate_comparison
+    section("RESULT VALIDATION")
+    require_file(PATHS.comparison_results, "Comparison results")
+    require_file(PATHS.scenario_definitions, "Scenario definitions")
+    validate_comparison.run_validation(
+        comparison_file=PATHS.comparison_results,
+        scenario_file=PATHS.scenario_definitions,
+        report_file=PATHS.validation_report
+    )
 
-def launch_report_generator():
 
-    print_section("INTERACTIVE REPORT GENERATOR")
+def run_complete_workflow():
+    run_network_reader_stage()
+    run_network_inspection_stage()
+    run_scenario_stage()
+    run_simulation_stage()
+    run_comparison_stage()
+    run_report_stage()
+    run_validation_stage()
 
-    required_files = [
-        SIMULATION_RESULTS_JSON,
-        COMPARISON_RESULTS_JSON,
-        SCENARIO_JSON
-    ]
 
-    for file_path in required_files:
-
-        if not file_path.is_file():
-
-            print(
-                f"[WARNING] Required report input "
-                f"not found: {file_path}"
-            )
-
-            return
-
+def execute_action(action):
     try:
-
-        import report_generator
-
-        report_generator.run_report_generator(
-            simulation_file=SIMULATION_RESULTS_JSON,
-            comparison_file=COMPARISON_RESULTS_JSON,
-            scenario_file=SCENARIO_JSON,
-            output_directory=RESULTS_DIR / "Reports"
-        )
-
-    except Exception:
-
-        print("\n[ERROR] Report generator failed.")
-
+        action()
+    except KeyboardInterrupt:
+        print("\n[INFO] Operation interrupted by user.")
+    except Exception as exc:
+        print(f"\n[ERROR] {type(exc).__name__}: {exc}")
         traceback.print_exc()
+    input("\nPress Enter to return to the main menu...")
 
 
-# ============================================================
-# 11. MAIN PIPELINE
-# ============================================================
+def main_menu():
+    global CURRENT_INP_FILE
+    actions = {
+        "1": ("Network Information", run_network_reader_stage),
+        "2": ("Network Inspection", run_network_inspection_stage),
+        "3": ("Scenario Setup", run_scenario_stage),
+        "4": ("Run Hydraulic Simulations", run_simulation_stage),
+        "5": ("Compare Scenarios", run_comparison_stage),
+        "6": ("Report Generator", run_report_stage),
+        "7": ("Validate Results", run_validation_stage),
+        "8": ("Run Complete Workflow", run_complete_workflow),
+    }
+    while True:
+        section("EPANET PYTHON ANALYSIS SYSTEM")
+        print(f"Project : {PATHS.project_dir}")
+        print(f"INP file: {CURRENT_INP_FILE}")
+        print("\nMAIN MENU")
+        for key, (label, _) in actions.items():
+            print(f"{key}. {label}")
+        print("9. Change INP File")
+        print("10. Show Project Paths")
+        print("0. Exit")
+        choice = input("\nSelect an operation: ").strip()
+        if choice == "0":
+            print("\nExiting.")
+            break
+        if choice == "9":
+            try:
+                CURRENT_INP_FILE = ask_input_file()
+            except SystemExit:
+                pass
+            continue
+        if choice == "10":
+            from project_paths import show_project_paths
+            show_project_paths()
+            input("\nPress Enter to continue...")
+            continue
+        if choice in actions:
+            execute_action(actions[choice][1])
+        else:
+            print("Invalid choice. Please try again.")
+
 
 def main():
+    global CURRENT_INP_FILE
+    ensure_project_directories()
+    section("EPANET PYTHON ANALYSIS SYSTEM")
+    print("Choose the EPANET network file.")
+    CURRENT_INP_FILE = ask_input_file()
+    main_menu()
 
-    print("\n")
-
-    print("#" * 65)
-    print("EPANET PYTHON ANALYSIS SYSTEM")
-    print("#" * 65)
-
-    print(
-        f"\nProject directory:\n{PROJECT_DIR}"
-    )
-
-    try:
-
-        # Step 1: Validate files
-        validate_input_files()
-
-        # Step 2: Load project data
-        (
-            network_original_data,
-            network_si_data,
-            scenario_data
-        ) = load_project_data()
-
-        # Step 3: Prepare scenario models
-        (
-            model_manager,
-            scenario_names
-        ) = prepare_models(scenario_data)
-
-        # Step 4: Run hydraulic simulations
-        simulation_output = run_simulations(
-            model_manager,
-            scenario_names
-        )
-
-        # Step 5: Collect simulation results
-        collect_simulation_results(
-            simulation_output=simulation_output,
-            scenario_data=scenario_data,
-            network_si_data=network_si_data
-        )
-
-        # Step 6: Compare scenarios
-        compare_scenarios()
-
-        # Step 7: Inspect comparison JSON
-        inspect_comparison_results()
-
-        # Step 8: Interactive reports
-        launch_report_generator()
-
-        print("\n" + "#" * 65)
-        print("PROJECT EXECUTION COMPLETED")
-        print("#" * 65)
-
-    except Exception as error:
-
-        print("\n" + "!" * 65)
-        print("PROJECT EXECUTION FAILED")
-        print("!" * 65)
-
-        print(f"\nError: {error}")
-
-        traceback.print_exc()
-
-
-# ============================================================
-# 12. ENTRY POINT
-# ============================================================
 
 if __name__ == "__main__":
-
     main()
