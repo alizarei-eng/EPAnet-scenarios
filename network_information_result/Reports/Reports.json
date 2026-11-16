@@ -1,0 +1,46 @@
+{
+    "Generated_At": "2026-11-16T16:44:47.136993+00:00",
+    "Report_Count": 1,
+    "Reports": {
+        "Element Analysis": {
+            "Report_Name": "Element Analysis",
+            "Generated_At": "2026-11-16T16:44:15.838912+00:00",
+            "Selected_Scenarios": [
+                "Sweep_004_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_2032"
+            ],
+            "Selected_Detail_Levels": [
+                "Statistical Summary"
+            ],
+            "Data_Sources": {
+                "Simulation": "Simulation_Results.json",
+                "Comparison": "Comparison_Results.json",
+                "Scenario_Definitions": "Scenario_Definitions.json"
+            },
+            "Results": {
+                "Group": "Node",
+                "Variables": [
+                    "pressure"
+                ],
+                "Selected_Elements": [
+                    "JCT_1"
+                ],
+                "Scenarios": {
+                    "Sweep_004_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_2032": {
+                        "pressure": {
+                            "JCT_1": {
+                                "Statistics": {
+                                    "Count": 1,
+                                    "Minimum": 56.17044586502273,
+                                    "Maximum": 56.17044586502273,
+                                    "Mean": 56.17044586502273,
+                                    "Median": 56.17044586502273,
+                                    "Standard_Deviation": 0.0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

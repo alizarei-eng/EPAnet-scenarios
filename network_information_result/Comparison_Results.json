@@ -1,7 +1,7 @@
 {
     "Project_Information": {
         "Comparison_Version": "1.0",
-        "Created_At": "2026-11-16T15:05:14.935497+00:00",
+        "Created_At": "2026-11-16T16:41:45.910765+00:00",
         "Reference_Scenario": "Sweep_001_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3556",
         "Input_Results_File": "A:\\epanet_project\\network_information_result\\Simulation_Results.json",
         "Input_Scenario_File": "A:\\epanet_project\\network_information_result\\Scenario_Definitions.json",
@@ -804,28 +804,28 @@
                         },
                         "Scenario_Statistics": {
                             "Count": 1,
-                            "Minimum": 59.34472094540416,
-                            "Maximum": 59.34472094540416,
-                            "Mean": 59.34472094540416,
-                            "Median": 59.34472094540416,
+                            "Minimum": 59.34472094540417,
+                            "Maximum": 59.34472094540417,
+                            "Mean": 59.34472094540417,
+                            "Median": 59.34472094540417,
                             "Standard_Deviation": null,
                             "Range": 0.0
                         },
                         "Difference_Statistics": {
                             "Count": 1,
-                            "Minimum": -1.3016174374741638,
-                            "Maximum": -1.3016174374741638,
-                            "Mean": -1.3016174374741638,
-                            "Median": -1.3016174374741638,
+                            "Minimum": -1.3016174374741567,
+                            "Maximum": -1.3016174374741567,
+                            "Mean": -1.3016174374741567,
+                            "Median": -1.3016174374741567,
                             "Standard_Deviation": null,
                             "Range": 0.0
                         },
                         "Percentage_Change_Statistics": {
                             "Count": 1,
-                            "Minimum": -2.1462424149281145,
-                            "Maximum": -2.1462424149281145,
-                            "Mean": -2.1462424149281145,
-                            "Median": -2.1462424149281145,
+                            "Minimum": -2.146242414928103,
+                            "Maximum": -2.146242414928103,
+                            "Mean": -2.146242414928103,
+                            "Median": -2.146242414928103,
                             "Standard_Deviation": null,
                             "Range": 0.0
                         },
@@ -837,13 +837,13 @@
                                 60.64633838287833
                             ],
                             "Scenario": [
-                                59.34472094540416
+                                59.34472094540417
                             ],
                             "Absolute_Difference": [
-                                -1.3016174374741638
+                                -1.3016174374741567
                             ],
                             "Percentage_Change": [
-                                -2.1462424149281145
+                                -2.146242414928103
                             ]
                         }
                     },
@@ -1032,28 +1032,28 @@
                         },
                         "Scenario_Statistics": {
                             "Count": 1,
-                            "Minimum": 59.34472094540416,
-                            "Maximum": 59.34472094540416,
-                            "Mean": 59.34472094540416,
-                            "Median": 59.34472094540416,
+                            "Minimum": 59.34472094540417,
+                            "Maximum": 59.34472094540417,
+                            "Mean": 59.34472094540417,
+                            "Median": 59.34472094540417,
                             "Standard_Deviation": null,
                             "Range": 0.0
                         },
                         "Difference_Statistics": {
                             "Count": 1,
-                            "Minimum": -1.3016174374741638,
-                            "Maximum": -1.3016174374741638,
-                            "Mean": -1.3016174374741638,
-                            "Median": -1.3016174374741638,
+                            "Minimum": -1.3016174374741567,
+                            "Maximum": -1.3016174374741567,
+                            "Mean": -1.3016174374741567,
+                            "Median": -1.3016174374741567,
                             "Standard_Deviation": null,
                             "Range": 0.0
                         },
                         "Percentage_Change_Statistics": {
                             "Count": 1,
-                            "Minimum": -2.1462424149281145,
-                            "Maximum": -2.1462424149281145,
-                            "Mean": -2.1462424149281145,
-                            "Median": -2.1462424149281145,
+                            "Minimum": -2.146242414928103,
+                            "Maximum": -2.146242414928103,
+                            "Mean": -2.146242414928103,
+                            "Median": -2.146242414928103,
                             "Standard_Deviation": null,
                             "Range": 0.0
                         },
@@ -1065,13 +1065,13 @@
                                 60.64633838287833
                             ],
                             "Scenario": [
-                                59.34472094540416
+                                59.34472094540417
                             ],
                             "Absolute_Difference": [
-                                -1.3016174374741638
+                                -1.3016174374741567
                             ],
                             "Percentage_Change": [
-                                -2.1462424149281145
+                                -2.146242414928103
                             ]
                         }
                     },
@@ -7938,12 +7938,12 @@
             "Node": {
                 "head": {
                     "Count": 2,
-                    "Minimum": 59.34472094540416,
+                    "Minimum": 59.34472094540417,
                     "Maximum": 60.96,
                     "Mean": 60.152360472702085,
                     "Median": 60.152360472702085,
-                    "Standard_Deviation": 1.1421747730133127,
-                    "Range": 1.6152790545958382
+                    "Standard_Deviation": 1.1421747730133076,
+                    "Range": 1.615279054595831
                 },
                 "demand": {
                     "Count": 2,
@@ -7957,11 +7957,11 @@
                 "pressure": {
                     "Count": 2,
                     "Minimum": 0.0,
-                    "Maximum": 59.34472094540416,
-                    "Mean": 29.67236047270208,
-                    "Median": 29.67236047270208,
-                    "Standard_Deviation": 41.963054608118625,
-                    "Range": 59.34472094540416
+                    "Maximum": 59.34472094540417,
+                    "Mean": 29.672360472702085,
+                    "Median": 29.672360472702085,
+                    "Standard_Deviation": 41.96305460811863,
+                    "Range": 59.34472094540417
                 },
                 "leak_demand": {
                     "Count": 2,
@@ -8013,8 +8013,8 @@
             },
             "Pressure_Assessment": {
                 "Minimum_Pressure": 0.0,
-                "Maximum_Pressure": 59.34472094540416,
-                "Mean_Pressure": 29.67236047270208
+                "Maximum_Pressure": 59.34472094540417,
+                "Mean_Pressure": 29.672360472702085
             },
             "Velocity_Assessment": {
                 "Minimum_Velocity": 0.9960776598343533,
@@ -8883,14 +8883,14 @@
                 "INPUT::Junctions.JCT_1.Demands.Base demand": 0.050472,
                 "INPUT::Pipes.PIPE_1.Diameter": 0.254,
                 "Node::head::Mean": 60.152360472702085,
-                "Node::head::Minimum": 59.34472094540416,
+                "Node::head::Minimum": 59.34472094540417,
                 "Node::head::Maximum": 60.96,
                 "Node::demand::Mean": 0.0,
                 "Node::demand::Minimum": -0.050472,
                 "Node::demand::Maximum": 0.050472,
-                "Node::pressure::Mean": 29.67236047270208,
+                "Node::pressure::Mean": 29.672360472702085,
                 "Node::pressure::Minimum": 0.0,
-                "Node::pressure::Maximum": 59.34472094540416,
+                "Node::pressure::Maximum": 59.34472094540417,
                 "Node::leak_demand::Mean": 0.0,
                 "Node::leak_demand::Minimum": 0.0,
                 "Node::leak_demand::Maximum": 0.0,
@@ -9475,8 +9475,8 @@
                     "Status": "SUCCESS",
                     "Sample_Count": 12,
                     "Pearson": {
-                        "Coefficient": -0.15309160397054866,
-                        "P_Value": 0.6347787250223365,
+                        "Coefficient": -0.15309160397054872,
+                        "P_Value": 0.6347787250223361,
                         "Interpretation": {
                             "Strength": "VERY_WEAK",
                             "Direction": "NEGATIVE"
@@ -9545,8 +9545,8 @@
                     "Status": "SUCCESS",
                     "Sample_Count": 12,
                     "Pearson": {
-                        "Coefficient": -0.15309160397054866,
-                        "P_Value": 0.6347787250223365,
+                        "Coefficient": -0.15309160397054872,
+                        "P_Value": 0.6347787250223361,
                         "Interpretation": {
                             "Strength": "VERY_WEAK",
                             "Direction": "NEGATIVE"
@@ -10184,7 +10184,7 @@
                 "Sample_Count": 12,
                 "Linear_Slope": -1186.6385428804213,
                 "Intercept": 93.02091208741179,
-                "Pearson_R_Squared": 0.023437039206275278,
+                "Pearson_R_Squared": 0.023437039206275295,
                 "Interpretation": "Descriptive linear sensitivity; not proof of causation."
             },
             "Node::leak_demand::Maximum": {
@@ -10224,7 +10224,7 @@
                 "Sample_Count": 12,
                 "Linear_Slope": -593.3192714402106,
                 "Intercept": 46.510456043705894,
-                "Pearson_R_Squared": 0.023437039206275278,
+                "Pearson_R_Squared": 0.023437039206275295,
                 "Interpretation": "Descriptive linear sensitivity; not proof of causation."
             },
             "Node::pressure::Minimum": {
@@ -10376,8 +10376,8 @@
             "Node::head::Minimum": {
                 "Status": "SUCCESS",
                 "Sample_Count": 12,
-                "Linear_Slope": 604.3882323500519,
-                "Intercept": -116.62059709675509,
+                "Linear_Slope": 604.388232350052,
+                "Intercept": -116.6205970967551,
                 "Pearson_R_Squared": 0.48001689881042625,
                 "Interpretation": "Descriptive linear sensitivity; not proof of causation."
             },
@@ -10416,8 +10416,8 @@
             "Node::pressure::Mean": {
                 "Status": "SUCCESS",
                 "Sample_Count": 12,
-                "Linear_Slope": 302.19411617502595,
-                "Intercept": -58.310298548377546,
+                "Linear_Slope": 302.194116175026,
+                "Intercept": -58.31029854837755,
                 "Pearson_R_Squared": 0.48001689881042625,
                 "Interpretation": "Descriptive linear sensitivity; not proof of causation."
             },
@@ -11578,7 +11578,7 @@
                 {
                     "Rank": 8,
                     "Scenario": "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254",
-                    "Value": 59.34472094540416
+                    "Value": 59.34472094540417
                 },
                 {
                     "Rank": 9,
@@ -11823,7 +11823,7 @@
                 {
                     "Rank": 5,
                     "Scenario": "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254",
-                    "Value": 59.34472094540416
+                    "Value": 59.34472094540417
                 },
                 {
                     "Rank": 6,
@@ -11888,7 +11888,7 @@
                 {
                     "Rank": 5,
                     "Scenario": "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254",
-                    "Value": 29.67236047270208
+                    "Value": 29.672360472702085
                 },
                 {
                     "Rank": 6,
