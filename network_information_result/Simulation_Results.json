@@ -1,0 +1,2765 @@
+{
+    "Project_Information": {
+        "Results_Version": "1.0",
+        "Created_At": "2026-11-16T15:05:14.166099+00:00",
+        "Simulation_Engine": "WNTRSimulator",
+        "WNTR_Version": "1.5.0",
+        "Pandas_Version": "3.1.1",
+        "NumPy_Version": "2.5.4",
+        "Storage_Format": "JSON",
+        "Data_Representation": "Pandas DataFrame split format",
+        "Unit_Conversion_Applied": false,
+        "Time_Index_Description": "Preserved as returned by WNTR"
+    },
+    "Network_Information": {
+        "Summary": [
+            {
+                "Input file": "flow.inp",
+                "Flow units": "GPM",
+                "Headloss formula": "H-W",
+                "Darcy-Weisbach": false,
+                "Junction count": 1,
+                "Reservoir count": 1,
+                "Tank count": 0,
+                "Pipe count": 1,
+                "Pump count": 0,
+                "Valve count": 0,
+                "Pattern count": 0,
+                "Curve count": 0
+            }
+        ],
+        "Unit_Information": [
+            {
+                "Unit system": "SI",
+                "Units": {
+                    "Flow": "m3/s",
+                    "Demand": "m3/s",
+                    "Length": "m",
+                    "Diameter": "m",
+                    "Elevation": "m",
+                    "Head": "m",
+                    "Headloss": "m",
+                    "Velocity": "m/s",
+                    "Volume": "m3",
+                    "Pressure": "m water column",
+                    "Power": "W",
+                    "Energy": "J",
+                    "Concentration": "kg/m3",
+                    "Mass": "kg",
+                    "Time": "s"
+                },
+                "Flow unit in source INP": "GPM",
+                "Headloss formula": "H-W"
+            }
+        ],
+        "Flow_Unit_In_Source_INP": null,
+        "Headloss_Formula": null
+    },
+    "Simulation_Summary": {
+        "Total_Scenarios": 12,
+        "Successful": 12,
+        "Failed": 0
+    },
+    "Scenarios": {
+        "Sweep_001_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3556": {
+            "Scenario_Name": "Sweep_001_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3556",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_001_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3556",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.3556
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            60.64633838287833,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472,
+                            -0.050472
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            60.64633838287833,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.5082028876705883
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_002_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3048": {
+            "Scenario_Name": "Sweep_002_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3048",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_002_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3048",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.3048
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            60.295404733846695,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472,
+                            -0.050472
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            60.295404733846695,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.6917205971071898
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254": {
+            "Scenario_Name": "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.254
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            59.34472094540416,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472,
+                            -0.050472
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            59.34472094540416,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.9960776598343533
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_004_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_2032": {
+            "Scenario_Name": "Sweep_004_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_2032",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_004_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_2032",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.2032
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            56.17044586502273,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472,
+                            -0.050472
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            56.17044586502273,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            1.5563713434911772
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_005_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1524": {
+            "Scenario_Name": "Sweep_005_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1524",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_005_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1524",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.1524
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            41.5121824766581,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472,
+                            -0.050472
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            41.5121824766581,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            2.766882388428759
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_006_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1016": {
+            "Scenario_Name": "Sweep_006_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1016",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_006_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1016",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.1016
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            -79.19574309690293,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472,
+                            -0.050472
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            -79.19574309690293,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.050472
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            6.225485373964709
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_007_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3556": {
+            "Scenario_Name": "Sweep_007_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3556",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_007_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3556",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.3556
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            60.38517998377887,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07,
+                            -0.07
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            60.38517998377887,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.704830443353566
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_008_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3048": {
+            "Scenario_Name": "Sweep_008_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3048",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_008_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3048",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.3048
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            59.742053470597895,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07,
+                            -0.07
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            59.742053470597895,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.9593525478979095
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_009_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_254": {
+            "Scenario_Name": "Sweep_009_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_254",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_009_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_254",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.254
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            57.99981459702002,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07,
+                            -0.07
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            57.99981459702002,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            1.3814676689729894
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_010_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_2032": {
+            "Scenario_Name": "Sweep_010_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_2032",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_010_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_2032",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.2032
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            52.18258329504825,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07,
+                            -0.07
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            52.18258329504825,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            2.1585432327702967
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_011_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1524": {
+            "Scenario_Name": "Sweep_011_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1524",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_011_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1524",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.1524
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            25.319589597257938,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07,
+                            -0.07
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            25.319589597257938,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            3.837410191591638
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        },
+        "Sweep_012_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1016": {
+            "Scenario_Name": "Sweep_012_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1016",
+            "Status": "SUCCESS",
+            "Execution": {
+                "Status": "SUCCESS",
+                "Error": null
+            },
+            "Scenario_Definition": {
+                "Scenario name": "Sweep_012_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1016",
+                "Creation time": "2026-11-16T17:58:49",
+                "Sweep": true,
+                "Changes": [
+                    {
+                        "Component": "Junctions",
+                        "Element": "JCT_1",
+                        "Parameter": "Demands",
+                        "Original SI Value": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ],
+                        "New SI Value": [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    },
+                    {
+                        "Component": "Pipes",
+                        "Element": "PIPE_1",
+                        "Parameter": "Diameter",
+                        "Original SI Value": 0.30479999999999996,
+                        "New SI Value": 0.1016
+                    }
+                ]
+            },
+            "Time_Steps": [
+                0
+            ],
+            "Available_Result_Variables": {
+                "Node": [
+                    "head",
+                    "demand",
+                    "pressure",
+                    "leak_demand"
+                ],
+                "Link": [
+                    "flowrate",
+                    "velocity",
+                    "status",
+                    "setting"
+                ]
+            },
+            "Node_Results": {
+                "head": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            -195.89193642900912,
+                            60.96
+                        ]
+                    ]
+                },
+                "demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07,
+                            -0.07
+                        ]
+                    ]
+                },
+                "pressure": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            -195.89193642900912,
+                            0.0
+                        ]
+                    ]
+                },
+                "leak_demand": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 2,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "JCT_1",
+                        "RES_1"
+                    ],
+                    "Dtypes": [
+                        "float64",
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.0,
+                            0.0
+                        ]
+                    ]
+                }
+            },
+            "Link_Results": {
+                "flowrate": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            0.07
+                        ]
+                    ]
+                },
+                "velocity": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            8.634172931081187
+                        ]
+                    ]
+                },
+                "status": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "int64"
+                    ],
+                    "Data": [
+                        [
+                            1
+                        ]
+                    ]
+                },
+                "setting": {
+                    "Format": "split",
+                    "Rows": 1,
+                    "Columns_Count": 1,
+                    "Index": [
+                        0
+                    ],
+                    "Columns": [
+                        "PIPE_1"
+                    ],
+                    "Dtypes": [
+                        "float64"
+                    ],
+                    "Data": [
+                        [
+                            100.0
+                        ]
+                    ]
+                }
+            },
+            "Other_Results": {}
+        }
+    }
+}

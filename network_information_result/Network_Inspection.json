@@ -1,0 +1,157 @@
+{
+    "Inspection information": {
+        "Created at": "2026-11-16T17:55:23.873889",
+        "Source file": "Network_SI.json"
+    },
+    "Network summary": [
+        {
+            "Input file": "flow.inp",
+            "Flow units": "GPM",
+            "Headloss formula": "H-W",
+            "Darcy-Weisbach": false,
+            "Junction count": 1,
+            "Reservoir count": 1,
+            "Tank count": 0,
+            "Pipe count": 1,
+            "Pump count": 0,
+            "Valve count": 0,
+            "Pattern count": 0,
+            "Curve count": 0
+        }
+    ],
+    "Unit information": [
+        {
+            "Unit system": "SI",
+            "Units": {
+                "Flow": "m3/s",
+                "Demand": "m3/s",
+                "Length": "m",
+                "Diameter": "m",
+                "Elevation": "m",
+                "Head": "m",
+                "Headloss": "m",
+                "Velocity": "m/s",
+                "Volume": "m3",
+                "Pressure": "m water column",
+                "Power": "W",
+                "Energy": "J",
+                "Concentration": "kg/m3",
+                "Mass": "kg",
+                "Time": "s"
+            },
+            "Flow unit in source INP": "GPM",
+            "Headloss formula": "H-W"
+        }
+    ],
+    "Components": {
+        "Junctions": {
+            "Component type": "Junctions",
+            "Count": 1,
+            "Elements": [
+                {
+                    "Name": "JCT_1",
+                    "Parameters": {
+                        "Elevation": 0.0,
+                        "Demands": [
+                            {
+                                "Base demand": 0.01892705892,
+                                "Pattern": null
+                            }
+                        ]
+                    }
+                }
+            ],
+            "Available parameters": [
+                "Demands",
+                "Elevation"
+            ],
+            "Scenario candidates": [
+                "Elevation",
+                "Demands"
+            ]
+        },
+        "Reservoirs": {
+            "Component type": "Reservoirs",
+            "Count": 1,
+            "Elements": [
+                {
+                    "Name": "RES_1",
+                    "Parameters": {
+                        "Head": 60.96,
+                        "Pattern": null
+                    }
+                }
+            ],
+            "Available parameters": [
+                "Head",
+                "Pattern"
+            ],
+            "Scenario candidates": [
+                "Head",
+                "Pattern"
+            ]
+        },
+        "Tanks": {
+            "Component type": "Tanks",
+            "Count": 0,
+            "Elements": [],
+            "Available parameters": [],
+            "Scenario candidates": []
+        },
+        "Pipes": {
+            "Component type": "Pipes",
+            "Count": 1,
+            "Elements": [
+                {
+                    "Name": "PIPE_1",
+                    "Parameters": {
+                        "Length": 243.84,
+                        "Diameter": 0.30479999999999996,
+                        "Roughness": 100.0,
+                        "Status": "Open",
+                        "Check valve": false
+                    }
+                }
+            ],
+            "Available parameters": [
+                "Check valve",
+                "Diameter",
+                "Length",
+                "Roughness",
+                "Status"
+            ],
+            "Scenario candidates": [
+                "Length",
+                "Diameter",
+                "Roughness",
+                "Status",
+                "Check valve"
+            ]
+        },
+        "Pumps": {
+            "Component type": "Pumps",
+            "Count": 0,
+            "Elements": [],
+            "Available parameters": [],
+            "Scenario candidates": []
+        },
+        "Valves": {
+            "Component type": "Valves",
+            "Count": 0,
+            "Elements": [],
+            "Available parameters": [],
+            "Scenario candidates": []
+        }
+    },
+    "Total elements": 3,
+    "Patterns": [],
+    "Curves": [],
+    "Connectivity": [
+        {
+            "Link": "PIPE_1",
+            "Link type": "Pipe",
+            "Start node": "RES_1",
+            "End node": "JCT_1"
+        }
+    ]
+}

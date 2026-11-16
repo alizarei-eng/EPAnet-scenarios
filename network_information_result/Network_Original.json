@@ -1,0 +1,107 @@
+{
+    "Summary": [
+        {
+            "Input file": "flow.inp",
+            "Flow units": "GPM",
+            "Headloss formula": "H-W",
+            "Darcy-Weisbach": false,
+            "Junction count": 1,
+            "Reservoir count": 1,
+            "Tank count": 0,
+            "Pipe count": 1,
+            "Pump count": 0,
+            "Valve count": 0,
+            "Pattern count": 0,
+            "Curve count": 0
+        }
+    ],
+    "Junctions": [
+        {
+            "Name": "JCT_1",
+            "Elevation": 0.0,
+            "Demands": [
+                {
+                    "Base demand": 300.0,
+                    "Pattern": null
+                }
+            ],
+            "Emitter coefficient": null
+        }
+    ],
+    "Reservoirs": [
+        {
+            "Name": "RES_1",
+            "Head": 200.0,
+            "Pattern": null
+        }
+    ],
+    "Tanks": [],
+    "Pipes": [
+        {
+            "Name": "PIPE_1",
+            "Start node": "RES_1",
+            "End node": "JCT_1",
+            "Length": 800.0,
+            "Diameter": 11.999999999999998,
+            "Roughness": 100.0,
+            "Roughness formula": "H-W",
+            "Roughness unit": "dimensionless",
+            "Minor loss coefficient": 0.0,
+            "Status": "Open",
+            "Check valve": false
+        }
+    ],
+    "Pumps": [],
+    "Valves": [],
+    "Patterns": [],
+    "Curves": [],
+    "Connectivity": [
+        {
+            "Link": "PIPE_1",
+            "Link type": "Pipe",
+            "Start node": "RES_1",
+            "End node": "JCT_1"
+        }
+    ],
+    "All Nodes": [
+        {
+            "Name": "JCT_1",
+            "Type": "Junction"
+        },
+        {
+            "Name": "RES_1",
+            "Type": "Reservoir"
+        }
+    ],
+    "All Links": [
+        {
+            "Name": "PIPE_1",
+            "Type": "Pipe",
+            "Start node": "RES_1",
+            "End node": "JCT_1"
+        }
+    ],
+    "Unit Information": [
+        {
+            "Unit system": "Original EPANET",
+            "Flow unit": "GPM",
+            "Headloss formula": "H-W",
+            "Units": {
+                "Flow": "GPM",
+                "Demand": "GPM",
+                "Length": "ft",
+                "Diameter": "inch",
+                "Elevation": "ft",
+                "Head": "ft",
+                "Headloss": "ft",
+                "Velocity": "ft/s",
+                "Volume": "ft3",
+                "Pressure": "psi",
+                "Power": "hp",
+                "Energy": "kWh",
+                "Concentration": "mg/L",
+                "Mass": "mg"
+            }
+        }
+    ]
+}

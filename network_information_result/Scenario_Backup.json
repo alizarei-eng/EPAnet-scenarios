@@ -1,0 +1,430 @@
+{
+    "Project information": {
+        "Source file": "A:\\epanet_project\\network_information_result\\Network_Inspection.json",
+        "Created at": "2026-11-16T17:55:39",
+        "Last updated": "2026-11-16T17:58:52",
+        "Unit system": "SI"
+    },
+    "Scenario count": 12,
+    "Scenarios": [
+        {
+            "Scenario name": "Sweep_001_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3556",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.050472,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.3556
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_002_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_3048",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.050472,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.3048
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_003_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_254",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.050472,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.254
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_004_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_2032",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.050472,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.2032
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_005_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1524",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.050472,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.1524
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_006_JCT_1_Demands_'Basedemand':0_050472,'Pa_PIPE_1_Diameter_0_1016",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.050472,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.1016
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_007_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3556",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.07,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.3556
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_008_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_3048",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.07,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.3048
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_009_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_254",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.07,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.254
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_010_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_2032",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.07,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.2032
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_011_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1524",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.07,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.1524
+                }
+            ]
+        },
+        {
+            "Scenario name": "Sweep_012_JCT_1_Demands_'Basedemand':0_07,'Patter_PIPE_1_Diameter_0_1016",
+            "Creation time": "2026-11-16T17:58:49",
+            "Sweep": true,
+            "Changes": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "New SI Value": [
+                        {
+                            "Base demand": 0.07,
+                            "Pattern": null
+                        }
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "New SI Value": 0.1016
+                }
+            ]
+        }
+    ],
+    "Session": {
+        "Draft": {
+            "Type": "Parameter Sweep",
+            "Parameters": [
+                {
+                    "Component": "Junctions",
+                    "Element": "JCT_1",
+                    "Parameter": "Demands",
+                    "Original SI Value": [
+                        {
+                            "Base demand": 0.01892705892,
+                            "Pattern": null
+                        }
+                    ],
+                    "Sweep Values": [
+                        [
+                            {
+                                "Base demand": 0.050472,
+                                "Pattern": null
+                            }
+                        ],
+                        [
+                            {
+                                "Base demand": 0.07,
+                                "Pattern": null
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "Component": "Pipes",
+                    "Element": "PIPE_1",
+                    "Parameter": "Diameter",
+                    "Original SI Value": 0.30479999999999996,
+                    "Sweep Values": [
+                        0.3556,
+                        0.3048,
+                        0.254,
+                        0.2032,
+                        0.1524,
+                        0.1016
+                    ]
+                }
+            ],
+            "Last updated": "2026-11-16T17:58:44"
+        }
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "Summary": [
+        {
+            "Input file": "flow.inp",
+            "Flow units": "GPM",
+            "Headloss formula": "H-W",
+            "Darcy-Weisbach": false,
+            "Junction count": 1,
+            "Reservoir count": 1,
+            "Tank count": 0,
+            "Pipe count": 1,
+            "Pump count": 0,
+            "Valve count": 0,
+            "Pattern count": 0,
+            "Curve count": 0
+        }
+    ],
+    "Junctions": [
+        {
+            "Name": "JCT_1",
+            "Elevation": 0.0,
+            "Demands": [
+                {
+                    "Base demand": 0.01892705892,
+                    "Pattern": null
+                }
+            ],
+            "Emitter coefficient": null
+        }
+    ],
+    "Reservoirs": [
+        {
+            "Name": "RES_1",
+            "Head": 60.96,
+            "Pattern": null
+        }
+    ],
+    "Tanks": [],
+    "Pipes": [
+        {
+            "Name": "PIPE_1",
+            "Start node": "RES_1",
+            "End node": "JCT_1",
+            "Length": 243.84,
+            "Diameter": 0.30479999999999996,
+            "Roughness": 100.0,
+            "Roughness formula": "H-W",
+            "Roughness unit": "dimensionless",
+            "Minor loss coefficient": 0.0,
+            "Status": "Open",
+            "Check valve": false
+        }
+    ],
+    "Pumps": [],
+    "Valves": [],
+    "Patterns": [],
+    "Curves": [],
+    "Connectivity": [
+        {
+            "Link": "PIPE_1",
+            "Link type": "Pipe",
+            "Start node": "RES_1",
+            "End node": "JCT_1"
+        }
+    ],
+    "All Nodes": [
+        {
+            "Name": "JCT_1",
+            "Type": "Junction"
+        },
+        {
+            "Name": "RES_1",
+            "Type": "Reservoir"
+        }
+    ],
+    "All Links": [
+        {
+            "Name": "PIPE_1",
+            "Type": "Pipe",
+            "Start node": "RES_1",
+            "End node": "JCT_1"
+        }
+    ],
+    "Unit Information": [
+        {
+            "Unit system": "SI",
+            "Units": {
+                "Flow": "m3/s",
+                "Demand": "m3/s",
+                "Length": "m",
+                "Diameter": "m",
+                "Elevation": "m",
+                "Head": "m",
+                "Headloss": "m",
+                "Velocity": "m/s",
+                "Volume": "m3",
+                "Pressure": "m water column",
+                "Power": "W",
+                "Energy": "J",
+                "Concentration": "kg/m3",
+                "Mass": "kg",
+                "Time": "s"
+            },
+            "Flow unit in source INP": "GPM",
+            "Headloss formula": "H-W"
+        }
+    ]
+}
