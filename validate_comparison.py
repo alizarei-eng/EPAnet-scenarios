@@ -39,6 +39,7 @@ class ComparisonValidator:
 
         self.comparison_file = comparison_file
         self.scenario_file = scenario_file
+        self.report_file = report_file or REPORT_FILE
 
         self.data = None
         self.scenario_data = None
@@ -557,7 +558,7 @@ class ComparisonValidator:
             lines.append(f"[ERROR] {item}")
 
         with open(
-            REPORT_FILE,
+            self.report_file,
             "w",
             encoding="utf-8"
         ) as file:
