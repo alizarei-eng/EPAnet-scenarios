@@ -169,6 +169,7 @@ def execute_action(action):
 
 
 def main_menu():
+    global CURRENT_INP_FILE
     actions = {
         "1": ("Network Information", run_network_reader_stage),
         "2": ("Network Inspection", run_network_inspection_stage),
@@ -194,7 +195,6 @@ def main_menu():
             print("\nExiting.")
             break
         if choice == "9":
-            global CURRENT_INP_FILE
             try:
                 CURRENT_INP_FILE = ask_input_file()
             except SystemExit:
